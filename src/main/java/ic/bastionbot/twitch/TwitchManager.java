@@ -55,23 +55,25 @@ public class TwitchManager {
                                 s.getChannel().getStatus().toUpperCase().contains("SPEEDRUN") ||
                                 s.getChannel().getStatus().contains("%")) {
                             //if it is already in the livestream list
-                            if (!isAlreadyLive(s.getChannel().getId())) {
+                            if (!isAlreadyLive(s.getId())) {
                                 Message newmessage;
                                 //if it was not the last stream to be posted about
                                 if (s.getChannel().getId() != laststream) {
                                     logger.info("Creating new Twitch text post and embed.");
-                                    logger.info("channel id:" + s.getChannel().getId());
+                                    logger.info("channel id: " + s.getChannel().getId());
+                                    logger.info("stream id: " + s.getId());
                                     logger.info("channel name: " + s.getChannel().getDisplayName());
                                     laststream = s.getChannel().getId();
                                     newmessage = createTextPost(s);
                                     createEmbedPost(s);
                                 } else {
                                     logger.info("Creating repeat Twitch text post.");
-                                    logger.info("channel id:" + s.getChannel().getId());
+                                    logger.info("channel id: " + s.getChannel().getId());
+                                    logger.info("stream id: " + s.getId());
                                     logger.info("channel name: " + s.getChannel().getDisplayName());
                                     newmessage = createRepeatPost(s);
                                 }
-                                livestreams.add(new LiveStream(s.getChannel().getId(), newmessage));
+                                livestreams.add(new LiveStream(s.getId(), newmessage));
                             }
                         }
                     }
