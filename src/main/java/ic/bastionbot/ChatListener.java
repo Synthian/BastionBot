@@ -36,7 +36,7 @@ public class ChatListener extends ListenerAdapter {
             Member member = event.getMember();
             String name = member.getEffectiveName();
 
-            if (textMessage.equals("!talkforaspell")) {
+            if (textMessage.startsWith("!talkforaspell")) {
                 logger.info("Sending !talkforaspell response.");
 
                 MessageBuilder mb = new MessageBuilder();
