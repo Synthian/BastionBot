@@ -1,5 +1,6 @@
 package ic.bastionbot.twitch;
 
+import ic.bastionbot.Constants;
 import ic.bastionbot.twitch.objects.StreamResponse;
 import ic.bastionbot.twitch.objects.StreamsResponse;
 import retrofit2.Call;
@@ -12,14 +13,14 @@ interface TwitchREST {
 
     @Headers({
             "Accept: application/vnd.twitchtv.v5+json",
-            "Client-ID: wqgduum3fycq1kk1sti5vmv9nqi58p"
+            "Client-ID: " + Constants.TWITCH_CLIENT_ID
     })
     @GET("streams/")
     Call<StreamsResponse> getLiveStreams(@Query("game") String game, @Query("stream_type") String stream_type);
 
     @Headers({
             "Accept: application/vnd.twitchtv.v5+json",
-            "Client-ID: wqgduum3fycq1kk1sti5vmv9nqi58p"
+            "Client-ID: " + Constants.TWITCH_CLIENT_ID
     })
     @GET("streams/{user_id}")
     Call<StreamResponse> getChannelStream(@Path("user_id") long id);
