@@ -16,7 +16,7 @@ public class ScheduledTasks {
 
     @Scheduled(fixedDelayString = "${bot.refresh}")
     public void sendMessage() {
-        messageTC.sendMessage("Test!").complete();
+        messageTC.sendMessage("New Test!").complete();
     }
 
 }
