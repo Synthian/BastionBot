@@ -16,103 +16,111 @@ public class RunsQueryParams {
     private String orderby;
     private String direction;
 
-    public String withUser() {
+    public String getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public RunsQueryParams withUser(String user) {
         this.user = user;
+        return this;
     }
 
-    public String withGuest() {
+    public String getGuest() {
         return guest;
     }
 
-    public void setGuest(String guest) {
+    public RunsQueryParams withGuest(String guest) {
         this.guest = guest;
+        return this;
     }
 
-    public String withExaminer() {
+    public String getExaminer() {
         return examiner;
     }
 
-    public void setExaminer(String examiner) {
+    public RunsQueryParams withExaminer(String examiner) {
         this.examiner = examiner;
+        return this;
     }
 
-    public String withGame() {
+    public String getGame() {
         return game;
     }
 
-    public void setGame(String game) {
+    public RunsQueryParams withGame(String game) {
         this.game = game;
+        return this;
     }
 
-    public String withLevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public RunsQueryParams withLevel(String level) {
         this.level = level;
+        return this;
     }
 
-    public String withCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public RunsQueryParams withCategory(String category) {
         this.category = category;
+        return this;
     }
 
-    public String withPlatform() {
+    public String getPlatform() {
         return platform;
     }
 
-    public void setPlatform(String platform) {
+    public RunsQueryParams withPlatform(String platform) {
         this.platform = platform;
+        return this;
     }
 
-    public String withRegion() {
+    public String getRegion() {
         return region;
     }
 
-    public void setRegion(String region) {
+    public RunsQueryParams withRegion(String region) {
         this.region = region;
+        return this;
     }
 
-    public Boolean withEmulated() {
+    public Boolean getEmulated() {
         return emulated;
     }
 
-    public void setEmulated(Boolean emulated) {
+    public RunsQueryParams withEmulated(Boolean emulated) {
         this.emulated = emulated;
+        return this;
     }
 
-    public String withStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public RunsQueryParams withStatus(String status) {
         this.status = status;
+        return this;
     }
 
-    public String withOrderby() {
+    public String getOrderby() {
         return orderby;
     }
 
-    public void setOrderby(String orderby) {
+    public RunsQueryParams withOrderby(String orderby) {
         this.orderby = orderby;
+        return this;
     }
 
-    public String withDirection() {
+    public String getDirection() {
         return direction;
     }
 
-    public void setDirection(String direction) {
+    public RunsQueryParams withDirection(String direction) {
         this.direction = direction;
+        return this;
     }
-
-
-
-
 }

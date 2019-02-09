@@ -1,9 +1,8 @@
 package com.iancordle.bb.speedrun.model;
 
-public class Response<T> {
+public class Wrapper<T> {
 
     private T data;
-
 
     public T getData() {
         return data;
