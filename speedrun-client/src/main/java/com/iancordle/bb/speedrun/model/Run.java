@@ -1,5 +1,8 @@
 package com.iancordle.bb.speedrun.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.iancordle.bb.speedrun.model.deserial.EmbedDeserializer;
+
 import java.util.List;
 import java.util.Map;
 
@@ -7,7 +10,8 @@ public class Run {
 
     private String id;
     private String weblink;
-    private String game;
+    @JsonDeserialize(using = EmbedDeserializer.class)
+    private Game game;
     private String level;
     private String category;
     private Videos videos;
@@ -38,11 +42,11 @@ public class Run {
         this.weblink = weblink;
     }
 
-    public String getGame() {
+    public Game getGame() {
         return game;
     }
 
-    public void setGame(String game) {
+    public void setGame(Game game) {
         this.game = game;
     }
 

@@ -1,6 +1,8 @@
 package com.iancordle.bb.speedrun.requests;
 
-public class RunsQueryParams {
+import java.util.List;
+
+public class RunsParams {
 
     private String user;
     private String guest;
@@ -15,12 +17,14 @@ public class RunsQueryParams {
     // Sorting
     private String orderby;
     private String direction;
+    // Embed
+    private List<String> embed;
 
     public String getUser() {
         return user;
     }
 
-    public RunsQueryParams withUser(String user) {
+    public RunsParams withUser(String user) {
         this.user = user;
         return this;
     }
@@ -29,7 +33,7 @@ public class RunsQueryParams {
         return guest;
     }
 
-    public RunsQueryParams withGuest(String guest) {
+    public RunsParams withGuest(String guest) {
         this.guest = guest;
         return this;
     }
@@ -38,7 +42,7 @@ public class RunsQueryParams {
         return examiner;
     }
 
-    public RunsQueryParams withExaminer(String examiner) {
+    public RunsParams withExaminer(String examiner) {
         this.examiner = examiner;
         return this;
     }
@@ -47,7 +51,7 @@ public class RunsQueryParams {
         return game;
     }
 
-    public RunsQueryParams withGame(String game) {
+    public RunsParams withGame(String game) {
         this.game = game;
         return this;
     }
@@ -56,7 +60,7 @@ public class RunsQueryParams {
         return level;
     }
 
-    public RunsQueryParams withLevel(String level) {
+    public RunsParams withLevel(String level) {
         this.level = level;
         return this;
     }
@@ -65,7 +69,7 @@ public class RunsQueryParams {
         return category;
     }
 
-    public RunsQueryParams withCategory(String category) {
+    public RunsParams withCategory(String category) {
         this.category = category;
         return this;
     }
@@ -74,7 +78,7 @@ public class RunsQueryParams {
         return platform;
     }
 
-    public RunsQueryParams withPlatform(String platform) {
+    public RunsParams withPlatform(String platform) {
         this.platform = platform;
         return this;
     }
@@ -83,7 +87,7 @@ public class RunsQueryParams {
         return region;
     }
 
-    public RunsQueryParams withRegion(String region) {
+    public RunsParams withRegion(String region) {
         this.region = region;
         return this;
     }
@@ -92,7 +96,7 @@ public class RunsQueryParams {
         return emulated;
     }
 
-    public RunsQueryParams withEmulated(Boolean emulated) {
+    public RunsParams withEmulated(Boolean emulated) {
         this.emulated = emulated;
         return this;
     }
@@ -101,7 +105,7 @@ public class RunsQueryParams {
         return status;
     }
 
-    public RunsQueryParams withStatus(String status) {
+    public RunsParams withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -110,7 +114,7 @@ public class RunsQueryParams {
         return orderby;
     }
 
-    public RunsQueryParams withOrderby(String orderby) {
+    public RunsParams withOrderby(String orderby) {
         this.orderby = orderby;
         return this;
     }
@@ -119,8 +123,17 @@ public class RunsQueryParams {
         return direction;
     }
 
-    public RunsQueryParams withDirection(String direction) {
+    public RunsParams withDirection(String direction) {
         this.direction = direction;
+        return this;
+    }
+
+    public List<String> getEmbed() {
+        return embed;
+    }
+
+    public RunsParams withEmbeds(List<String> embeds) {
+        this.embed = embeds;
         return this;
     }
 }

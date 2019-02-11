@@ -2,16 +2,17 @@ package com.iancordle.bb;
 
 import com.iancordle.bb.speedrun.SpeedrunClient;
 import com.iancordle.bb.speedrun.model.Run;
-import com.iancordle.bb.speedrun.requests.RunsQueryParams;
+import com.iancordle.bb.speedrun.requests.RunsParams;
 import feign.FeignException;
 import net.dv8tion.jda.core.entities.TextChannel;
-import org.jetbrains.annotations.Async;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -30,11 +31,14 @@ public class ScheduledTasks {
     @Scheduled(fixedDelayString = "${bot.refresh}")
     public void sendMessage() {
         try {
-            List<Run> runs = speedrunClient.getRuns(new RunsQueryParams()
+            List<String> embeds = new ArrayList<>(Arrays.asList("game"));
+            List<Run> runs = speedrunClient.getRuns(new RunsParams()
                     .withGame("n268p5dp")
                     .withStatus("verified")
                     .withOrderby("verify-date")
-                    .withDirection("desc"))
+                    .withDirection("desc")
+//                    .withEmbeds(embeds)
+            )
                     .getData();
             LOG.info("Success!");
         } catch (FeignException ex) {
