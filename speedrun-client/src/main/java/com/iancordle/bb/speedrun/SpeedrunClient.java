@@ -1,8 +1,5 @@
 package com.iancordle.bb.speedrun;
 
-import com.iancordle.bb.speedrun.model.Category;
-import com.iancordle.bb.speedrun.model.Run;
-import com.iancordle.bb.speedrun.model.Wrapper;
 import com.iancordle.bb.speedrun.requests.RunsParams;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
@@ -16,11 +13,9 @@ import java.util.List;
 public interface SpeedrunClient {
 
     @GetMapping("categories/{id}")
-    Wrapper<Category> getCategory(@PathVariable String id,
-                                  @RequestParam(value = "embed", required = false) List<String> embed);
+    String getCategory(@PathVariable("id") String id, @RequestParam(value = "embed", required = false) List<String> embed);
 
     @GetMapping("/runs")
-    Wrapper<List<Run>> getRuns(@SpringQueryMap RunsParams runsParams);
-
+    String getRuns(@SpringQueryMap RunsParams runsParams);
 
 }

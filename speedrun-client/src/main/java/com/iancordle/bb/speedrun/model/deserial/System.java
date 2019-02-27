@@ -1,6 +1,7 @@
-package com.iancordle.bb.speedrun.model;
+package com.iancordle.bb.speedrun.model.deserial;
 
-public class Splits {
+public class System {
+
     private String platform;
     private Boolean emulated;
     private String region;

@@ -19,27 +19,27 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 
 public class ClientConfig {
 
-    @Bean
-    public Decoder feignDecoder() {
-        SimpleModule module = new SimpleModule();
-        module.setDeserializerModifier(new BeanDeserializerModifier()
-        {
-            @Override public JsonDeserializer<?> modifyDeserializer(DeserializationConfig config, BeanDescription beanDesc, JsonDeserializer<?> deserializer)
-            {
-                return new SpeedrunDeserializer(deserializer, beanDesc);
-            }
-        });
-
-        ObjectMapper objectMapper = new Jackson2ObjectMapperBuilder()
-                .failOnUnknownProperties(false)
-                .defaultViewInclusion(false)
-                .build();
-        objectMapper.registerModule(module);
-
-
-        HttpMessageConverter jacksonConverter = new MappingJackson2HttpMessageConverter(objectMapper);
-        ObjectFactory<HttpMessageConverters> objectFactory = () -> new HttpMessageConverters(jacksonConverter);
-        return new ResponseEntityDecoder(new SpringDecoder(objectFactory));
-    }
+//    @Bean
+//    public Decoder feignDecoder() {
+//        SimpleModule module = new SimpleModule();
+//        module.setDeserializerModifier(new BeanDeserializerModifier()
+//        {
+//            @Override public JsonDeserializer<?> modifyDeserializer(DeserializationConfig config, BeanDescription beanDesc, JsonDeserializer<?> deserializer)
+//            {
+//                return new SpeedrunDeserializer(deserializer, beanDesc);
+//            }
+//        });
+//
+//        ObjectMapper objectMapper = new Jackson2ObjectMapperBuilder()
+//                .failOnUnknownProperties(false)
+//                .defaultViewInclusion(false)
+//                .build();
+//        objectMapper.registerModule(module);
+//
+//
+//        HttpMessageConverter jacksonConverter = new MappingJackson2HttpMessageConverter(objectMapper);
+//        ObjectFactory<HttpMessageConverters> objectFactory = () -> new HttpMessageConverters(jacksonConverter);
+//        return new ResponseEntityDecoder(new SpringDecoder(objectFactory));
+//    }
 
 }

@@ -1,7 +1,6 @@
 package com.iancordle.bb.speedrun.model;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.iancordle.bb.speedrun.model.deserial.EmbedDeserializer;
+import com.iancordle.bb.speedrun.model.deserial.System;
 
 import java.util.List;
 import java.util.Map;
@@ -10,7 +9,6 @@ public class Run {
 
     private String id;
     private String weblink;
-    @JsonDeserialize(using = EmbedDeserializer.class)
     private Game game;
     private String level;
     private String category;
@@ -22,7 +20,7 @@ public class Run {
     private String submitted;
     private Times times;
     private System system;
-    private Splits splits;
+    private Link splits;
     private Map<String, String> values;
     private List<Link> links;
 
@@ -130,11 +128,11 @@ public class Run {
         this.system = system;
     }
 
-    public Splits getSplits() {
+    public Link getSplits() {
         return splits;
     }
 
-    public void setSplits(Splits splits) {
+    public void setSplits(Link splits) {
         this.splits = splits;
     }
 
