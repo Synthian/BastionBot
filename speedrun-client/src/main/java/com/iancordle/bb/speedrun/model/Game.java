@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 public class Game extends Embeddable {
-
     private Names names;
     private String abbreviation;
     private String weblink;

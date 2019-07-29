@@ -3,7 +3,6 @@ package com.iancordle.bb.speedrun.requests;
 import java.util.List;
 
 public class RunsParams {
-
     private String user;
     private String guest;
     private String examiner;
@@ -14,11 +13,14 @@ public class RunsParams {
     private String region;
     private Boolean emulated;
     private String status;
+    // Pagination
+    private int max;
+    private int offset;
     // Sorting
     private String orderby;
     private String direction;
     // Embed
-    private List<String> embed;
+    private String embed;
 
     public String getUser() {
         return user;
@@ -110,17 +112,39 @@ public class RunsParams {
         return this;
     }
 
+    public int getMax() {
+        return max;
+    }
+
+    public int getOffset() {
+        return offset;
+    }
+
     public String getOrderby() {
         return orderby;
     }
 
-    public RunsParams withOrderby(String orderby) {
-        this.orderby = orderby;
+    public String getDirection() {
+        return direction;
+    }
+
+    public String getEmbed() {
+        return embed;
+    }
+
+    public RunsParams withMax(int max) {
+        this.max = max;
         return this;
     }
 
-    public String getDirection() {
-        return direction;
+    public RunsParams withOffset(int offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    public RunsParams withOrder(String orderby) {
+        this.orderby = orderby;
+        return this;
     }
 
     public RunsParams withDirection(String direction) {
@@ -128,12 +152,8 @@ public class RunsParams {
         return this;
     }
 
-    public List<String> getEmbed() {
-        return embed;
-    }
-
-    public RunsParams withEmbeds(List<String> embeds) {
-        this.embed = embeds;
+    public RunsParams withEmbeds(String embed) {
+        this.embed = embed;
         return this;
     }
 }

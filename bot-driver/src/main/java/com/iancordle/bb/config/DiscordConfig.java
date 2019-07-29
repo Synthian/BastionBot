@@ -24,34 +24,33 @@ public class DiscordConfig {
 
     @Bean
     public JDA jda() throws LoginException, InterruptedException {
-        // TODO: handle null values? Default values for configuration, etc.
-        return new JDABuilder(AccountType.BOT)
-                .setGame(Game.playing(discordProps.getStatus().getGame()))
-                .setToken(discordProps.getToken())
-                .build()
-                .awaitReady();
+        JDABuilder builder = new JDABuilder(AccountType.BOT)
+                .setToken(discordProps.getToken());
+        if (discordProps.getStatus() != null && discordProps.getStatus().getGame() != null)
+                builder.setGame(Game.playing(discordProps.getStatus().getGame()));
+        return builder.build().awaitReady();
     }
 
     @Bean
     public Guild guild(JDA jda) throws ConfigurationException {
-        Guild g = jda.getGuildById(discordProps.getServer().getId());
-        if (g == null) {
+        Guild guild = jda.getGuildById(discordProps.getServer().getId());
+        if (guild == null) {
             throw new ConfigurationException("Could not find connected guild with ID " + discordProps.getServer().getId());
         }
-        return g;
+        return guild;
     }
 
-    @Bean(name = "RunsTextChannel")
+    @Bean
     public TextChannel runsTextChannel(Guild guild) throws ConfigurationException {
         return getFirstTextChannelByName(guild, discordProps.getServer().getRunsChannel());
     }
 
-    @Bean(name = "StreamsTextChannel")
+    @Bean
     public TextChannel streamsTextChannel(Guild guild) throws ConfigurationException {
         return getFirstTextChannelByName(guild, discordProps.getServer().getStreamsChannel());
     }
 
-    @Bean(name = "MessageTextChannel")
+    @Bean
     public TextChannel messageTextChannel(Guild guild) throws ConfigurationException {
         return getFirstTextChannelByName(guild, discordProps.getServer().getMessageChannel());
     }

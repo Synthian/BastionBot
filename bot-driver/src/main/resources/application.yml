@@ -1,0 +1,21 @@
+style:
+  run-post-color:
+    r: 165
+    g: 145
+    b: 78
+  run-icon: http://i.imgur.com/NfmpQVu.png
+discord:
+  status:
+    game: Bastion
+speedrun:
+  api-url: https://www.speedrun.com/api/v1
+  game-id: n268p5dp
+  refresh: 600000
+  new-game-variables:
+    - 814kvd0l
+    - p12owz7l
+    - xqk948n1
+  new-game-plus-variables:
+    - z1959r0q
+    - 81p40ng1
+    - gq7944vl

@@ -1,22 +1,20 @@
 package com.iancordle.bb.speedrun.model;
 
-import com.iancordle.bb.speedrun.model.deserial.System;
-
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
 public class Run {
-
     private String id;
     private String weblink;
     private Game game;
-    private String level;
-    private String category;
+    private Level level;
+    private Category category;
     private Videos videos;
     private String comment;
     private Status status;
     private List<Player> players;
-    private String date;
+    private LocalDate date;
     private String submitted;
     private Times times;
     private System system;
@@ -48,19 +46,19 @@ public class Run {
         this.game = game;
     }
 
-    public String getLevel() {
+    public Level getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(Level level) {
         this.level = level;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
@@ -96,11 +94,11 @@ public class Run {
         this.players = players;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -151,6 +149,4 @@ public class Run {
     public void setLinks(List<Link> links) {
         this.links = links;
     }
-
-
 }

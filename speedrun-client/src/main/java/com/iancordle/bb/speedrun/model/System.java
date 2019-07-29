@@ -1,4 +1,4 @@
-package com.iancordle.bb.speedrun.model.deserial;
+package com.iancordle.bb.speedrun.model;
 
 public class System {
 

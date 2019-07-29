@@ -4,12 +4,13 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "bot.discord")
+@ConfigurationProperties(prefix = "discord")
 public class DiscordProps {
 
     private String token;
     private Status status;
     private Server server;
+    private String runIcon;
 
     public Status getStatus() {
         return status;
@@ -33,6 +34,14 @@ public class DiscordProps {
 
     public void setServer(Server server) {
         this.server = server;
+    }
+
+    public String getRunIcon() {
+        return runIcon;
+    }
+
+    public void setRunIcon(String runIcon) {
+        this.runIcon = runIcon;
     }
 
     public static class Status {

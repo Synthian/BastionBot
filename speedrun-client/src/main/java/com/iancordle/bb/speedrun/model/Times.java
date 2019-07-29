@@ -1,20 +1,22 @@
 package com.iancordle.bb.speedrun.model;
 
+import java.time.Duration;
+
 public class Times {
-    private String primary;
+    private Duration primary;
     private Integer primary_t;
-    private String realtime;
+    private Duration realtime;
     private Integer realtime_t;
-    private String realtime_noloads;
+    private Duration realtime_noloads;
     private Integer realtime_noloads_t;
-    private String ingame;
+    private Duration ingame;
     private Integer ingame_t;
 
-    public String getPrimary() {
+    public Duration getPrimary() {
         return primary;
     }
 
-    public void setPrimary(String primary) {
+    public void setPrimary(Duration primary) {
         this.primary = primary;
     }
 
@@ -26,11 +28,11 @@ public class Times {
         this.primary_t = primary_t;
     }
 
-    public String getRealtime() {
+    public Duration getRealtime() {
         return realtime;
     }
 
-    public void setRealtime(String realtime) {
+    public void setRealtime(Duration realtime) {
         this.realtime = realtime;
     }
 
@@ -42,11 +44,11 @@ public class Times {
         this.realtime_t = realtime_t;
     }
 
-    public String getRealtime_noloads() {
+    public Duration getRealtime_noloads() {
         return realtime_noloads;
     }
 
-    public void setRealtime_noloads(String realtime_noloads) {
+    public void setRealtime_noloads(Duration realtime_noloads) {
         this.realtime_noloads = realtime_noloads;
     }
 
@@ -58,11 +60,11 @@ public class Times {
         this.realtime_noloads_t = realtime_noloads_t;
     }
 
-    public String getIngame() {
+    public Duration getIngame() {
         return ingame;
     }
 
-    public void setIngame(String ingame) {
+    public void setIngame(Duration ingame) {
         this.ingame = ingame;
     }
 

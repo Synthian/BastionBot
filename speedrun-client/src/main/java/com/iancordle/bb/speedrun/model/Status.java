@@ -2,11 +2,13 @@ package com.iancordle.bb.speedrun.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.ZonedDateTime;
+
 public class Status {
     private String status;
     private String examiner;
     @JsonProperty("verify-date")
-    private String verifydate;
+    private ZonedDateTime verifyDate;
 
     public String getStatus() {
         return status;
@@ -24,11 +26,11 @@ public class Status {
         this.examiner = examiner;
     }
 
-    public String getVerifydate() {
-        return verifydate;
+    public ZonedDateTime getVerifyDate() {
+        return verifyDate;
     }
 
-    public void setVerifydate(String verifydate) {
-        this.verifydate = verifydate;
+    public void setVerifyDate(ZonedDateTime verifydate) {
+        this.verifyDate = verifydate;
     }
 }
