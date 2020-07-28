@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Configuration;
 public class StyleProps {
     private RGB runPostColor;
     private String runIcon;
+    private String twitchIcon;
+    private RGB streamPostColor;
 
     public RGB getRunPostColor() {
         return runPostColor;
@@ -23,6 +25,22 @@ public class StyleProps {
 
     public void setRunIcon(String runIcon) {
         this.runIcon = runIcon;
+    }
+
+    public String getTwitchIcon() {
+        return twitchIcon;
+    }
+
+    public void setTwitchIcon(String twitchIcon) {
+        this.twitchIcon = twitchIcon;
+    }
+
+    public RGB getStreamPostColor() {
+        return streamPostColor;
+    }
+
+    public void setStreamPostColor(RGB streamPostColor) {
+        this.streamPostColor = streamPostColor;
     }
 
     public static class RGB {

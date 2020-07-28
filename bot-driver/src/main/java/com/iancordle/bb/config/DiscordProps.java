@@ -3,6 +3,9 @@ package com.iancordle.bb.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.List;
+import java.util.Map;
+
 @Configuration
 @ConfigurationProperties(prefix = "discord")
 public class DiscordProps {
@@ -11,6 +14,8 @@ public class DiscordProps {
     private Status status;
     private Server server;
     private String runIcon;
+    private List<String> echoedEmojis;
+    private Map<String, String> staticCommands;
 
     public Status getStatus() {
         return status;
@@ -42,6 +47,22 @@ public class DiscordProps {
 
     public void setRunIcon(String runIcon) {
         this.runIcon = runIcon;
+    }
+
+    public List<String> getEchoedEmojis() {
+        return echoedEmojis;
+    }
+
+    public void setEchoedEmojis(List<String> echoedEmojis) {
+        this.echoedEmojis = echoedEmojis;
+    }
+
+    public Map<String, String> getStaticCommands() {
+        return staticCommands;
+    }
+
+    public void setStaticCommands(Map<String, String> staticCommands) {
+        this.staticCommands = staticCommands;
     }
 
     public static class Status {

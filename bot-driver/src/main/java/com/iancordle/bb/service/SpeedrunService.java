@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -59,6 +58,6 @@ public class SpeedrunService {
         if (leaderboardRun.isPresent()) {
             return leaderboardRun.get().getPlace();
         }
-        throw new NoPlaceException("Could not find run in leaderboard for id: " + run.getId());
+        throw new NoPlaceException(run.getId());
     }
 }

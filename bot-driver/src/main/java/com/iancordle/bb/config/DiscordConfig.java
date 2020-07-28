@@ -1,12 +1,13 @@
 package com.iancordle.bb.config;
 
 import com.iancordle.bb.exceptions.ConfigurationException;
-import net.dv8tion.jda.core.AccountType;
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.JDABuilder;
-import net.dv8tion.jda.core.entities.Game;
-import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.TextChannel;
+import com.iancordle.bb.listeners.ReactionListener;
+import com.iancordle.bb.listeners.StaticResponseListener;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.TextChannel;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -24,11 +25,14 @@ public class DiscordConfig {
 
     @Bean
     public JDA jda() throws LoginException, InterruptedException {
-        JDABuilder builder = new JDABuilder(AccountType.BOT)
-                .setToken(discordProps.getToken());
-        if (discordProps.getStatus() != null && discordProps.getStatus().getGame() != null)
-                builder.setGame(Game.playing(discordProps.getStatus().getGame()));
-        return builder.build().awaitReady();
+        JDABuilder builder = JDABuilder.createDefault(discordProps.getToken());
+        if (discordProps.getStatus() != null && discordProps.getStatus().getGame() != null) {
+            builder.setActivity(Activity.playing(discordProps.getStatus().getGame()));
+        }
+        JDA jda = builder.build().awaitReady();
+        jda.addEventListener(new ReactionListener(discordProps));
+        jda.addEventListener(new StaticResponseListener(discordProps));
+        return jda;
     }
 
     @Bean

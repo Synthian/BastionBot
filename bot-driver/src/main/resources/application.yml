@@ -4,13 +4,22 @@ style:
     g: 145
     b: 78
   run-icon: http://i.imgur.com/NfmpQVu.png
+  stream-post-color:
+    r: 45
+    g: 80
+    b: 135
+  twitch-icon: https://cdn3.iconfinder.com/data/icons/happily-colored-snlogo/512/twitch.png
 discord:
   status:
     game: Bastion
+  echoed-emojis:
+    - Gold
+  staticCommands:
+    talkforaspell: https://clips.twitch.tv/SingleGeniusAlfalfaTebowing
 speedrun:
   api-url: https://www.speedrun.com/api/v1
   game-id: n268p5dp
-  refresh: 600000
+  refresh: 120000
   new-game-variables:
     - 814kvd0l
     - p12owz7l
@@ -19,3 +28,16 @@ speedrun:
     - z1959r0q
     - 81p40ng1
     - gq7944vl
+twitch:
+  refresh: 120000
+  game-id: 28897
+  title-keys:
+    - "%"
+    - asl
+    - aic
+    - speedrun
+  stream-tags:
+    - 7cefbf30-4c3e-4aa7-99cd-70aabb662f27
+spring:
+  main:
+    banner-mode: off
