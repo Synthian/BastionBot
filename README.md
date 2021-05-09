@@ -1,4 +1,4 @@
-# BastionBot v2.0
+# BastionBot v3.0
 By **valentinoIAN (IanSynth)**
 
 ## What it Does
@@ -13,8 +13,10 @@ In any channel that BastionBot has access to, you can use the following commands
 **Gold auto-react** : BastionBot will mimic any reacts with the :Gold: emote.
 
 
-## Dependencies
-- JDA Library
-- RXJava 2
-- Retrofit 2 with Gson
-- Logback
+## Architecture
+
+* **Java 11** Runtime
+* **Spring Boot** Framework
+* **Feign** for speedrun.com API calls
+* **[JDA](https://github.com/DV8FromTheWorld/JDA)** for Twitch API calls
+* Deployed on **Azure App Service**
