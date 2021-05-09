@@ -5,7 +5,7 @@
 
     <groupId>com.iancordle</groupId>
     <artifactId>bastion-bot</artifactId>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <name>bastion-bot</name>
     <description>Discord bot for Bastion Speedrunning.</description>
     <packaging>pom</packaging>

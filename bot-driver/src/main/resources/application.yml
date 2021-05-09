@@ -10,6 +10,12 @@ style:
     b: 135
   twitch-icon: https://cdn3.iconfinder.com/data/icons/happily-colored-snlogo/512/twitch.png
 discord:
+  token: ${DISCORD_TOKEN}
+  server:
+    id: ${DISCORD_SERVER_ID}
+    runs-channel: runs
+    streams-channel: streams
+    message-channel: general
   status:
     game: Bastion
   echoed-emojis:
@@ -29,6 +35,8 @@ speedrun:
     - 81p40ng1
     - gq7944vl
 twitch:
+  clientId: ${TWITCH_CLIENT_ID}
+  clientSecret: ${TWITCH_CLIENT_SECRET}
   refresh: 120000
   game-id: 28897
   title-keys:
